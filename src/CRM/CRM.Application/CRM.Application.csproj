@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Features\Auth\Commands\EnableEmailAuthenticator\**" />
+    <Compile Remove="Features\Auth\Commands\EnableOtpAuthenticator\**" />
+    <Compile Remove="Features\Auth\Commands\VerifyOtpAuthenticator\**" />
+    <EmbeddedResource Remove="Features\Auth\Commands\EnableEmailAuthenticator\**" />
+    <EmbeddedResource Remove="Features\Auth\Commands\EnableOtpAuthenticator\**" />
+    <EmbeddedResource Remove="Features\Auth\Commands\VerifyOtpAuthenticator\**" />
+    <None Remove="Features\Auth\Commands\EnableEmailAuthenticator\**" />
+    <None Remove="Features\Auth\Commands\EnableOtpAuthenticator\**" />
+    <None Remove="Features\Auth\Commands\VerifyOtpAuthenticator\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Core.Application\Core.Application.csproj" />
+    <ProjectReference Include="..\..\Core\Core.CrossCuttingConcerns\Core.CrossCuttingConcerns.csproj" />
+    <ProjectReference Include="..\..\Core\Core.ElasticSearch\Core.ElasticSearch.csproj" />
+    <ProjectReference Include="..\..\Core\Core.Mailing\Core.Mailing.csproj" />
+    <ProjectReference Include="..\..\Core\Core.Security\Core.Security.csproj" />
+    <ProjectReference Include="..\CRM.Domain\CRM.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\UserOperationClaims\" />
+    <Folder Include="Features\OperationClaims\" />
+    <Folder Include="Features\Users\Queries\" />
+    <Folder Include="Features\Users\Profiles\" />
+  </ItemGroup>
+
+</Project>
