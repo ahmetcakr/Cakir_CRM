@@ -11,8 +11,6 @@ public class User : Entity<int>
     public byte[] PasswordSalt { get; set; }
     public byte[] PasswordHash { get; set; }
     public bool Status { get; set; }
-    public AuthenticatorType AuthenticatorType { get; set; }
-
     public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; } = null!;
     public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = null!;
     public virtual ICollection<EmailAuthenticator> EmailAuthenticators { get; set; } = null!;
@@ -33,8 +31,7 @@ public class User : Entity<int>
         string email,
         byte[] passwordSalt,
         byte[] passwordHash,
-        bool status,
-        AuthenticatorType authenticatorType
+        bool status
     )
     {
         FirstName = firstName;
@@ -43,7 +40,6 @@ public class User : Entity<int>
         PasswordSalt = passwordSalt;
         PasswordHash = passwordHash;
         Status = status;
-        AuthenticatorType = authenticatorType;
     }
 
     public User(
@@ -53,8 +49,7 @@ public class User : Entity<int>
         string email,
         byte[] passwordSalt,
         byte[] passwordHash,
-        bool status,
-        AuthenticatorType authenticatorType
+        bool status
     )
         : base(id)
     {
@@ -64,6 +59,5 @@ public class User : Entity<int>
         PasswordSalt = passwordSalt;
         PasswordHash = passwordHash;
         Status = status;
-        AuthenticatorType = authenticatorType;
     }
 }
