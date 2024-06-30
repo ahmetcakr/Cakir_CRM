@@ -64,7 +64,6 @@ public class LoginCommand : IRequest<LoggedResponse>
 
                 await _authenticatorService.SendAuthenticatorCode(user);
 
-                loggedResponse.RequiredAuthenticatorType = AuthenticatorType.Email;
                 return loggedResponse;
             }
             else

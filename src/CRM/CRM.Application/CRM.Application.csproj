@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="12.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="MediatR" Version="12.3.0" />
+    <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,13 +31,6 @@
     <ProjectReference Include="..\..\Core\Core.Mailing\Core.Mailing.csproj" />
     <ProjectReference Include="..\..\Core\Core.Security\Core.Security.csproj" />
     <ProjectReference Include="..\CRM.Domain\CRM.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\UserOperationClaims\" />
-    <Folder Include="Features\OperationClaims\" />
-    <Folder Include="Features\Users\Queries\" />
-    <Folder Include="Features\Users\Profiles\" />
   </ItemGroup>
 
 </Project>

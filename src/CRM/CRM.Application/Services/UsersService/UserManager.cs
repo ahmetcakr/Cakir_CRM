@@ -3,12 +3,7 @@ using Core.Security.Entities;
 using CRM.Application.Features.Users.Rules;
 using CRM.Application.Repositories;
 using Microsoft.EntityFrameworkCore.Query;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CRM.Application.Services.UsersService;
 
