@@ -24,7 +24,7 @@ public class AuthBusinessRules : BaseBusinessRules
         var emailAuth = await _emailAuthenticatorRepository.GetByUserIdAsync(userId);
 
         if (!emailAuth.IsVerified)
-            throw new Exception("Email is not verified.");
+            throw new BusinessException("Email is not verified.");
 
         return;
     }
@@ -61,13 +61,6 @@ public class AuthBusinessRules : BaseBusinessRules
     {
         if (user == null)
             throw new BusinessException(AuthMessages.UserDontExists);
-        return Task.CompletedTask;
-    }
-
-    public Task UserShouldNotBeHaveAuthenticator(User user)
-    {
-        if (user.AuthenticatorType != AuthenticatorType.None)
-            throw new BusinessException(AuthMessages.UserHaveAlreadyAAuthenticator);
         return Task.CompletedTask;
     }
 

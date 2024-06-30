@@ -16,13 +16,15 @@ public class AuthenticatorManager : IAuthenticatorService
     private readonly IMailService _mailService;
     private readonly IOtpAuthenticatorHelper _otpAuthenticatorHelper;
     private readonly IOtpAuthenticatorRepository _otpAuthenticatorRepository;
+    private readonly IUserRepository _userRepository;
 
     public AuthenticatorManager(
         IEmailAuthenticatorHelper emailAuthenticatorHelper,
         IEmailAuthenticatorRepository emailAuthenticatorRepository,
         IMailService mailService,
         IOtpAuthenticatorHelper otpAuthenticatorHelper,
-        IOtpAuthenticatorRepository otpAuthenticatorRepository
+        IOtpAuthenticatorRepository otpAuthenticatorRepository,
+        IUserRepository userRepository
     )
     {
         _emailAuthenticatorHelper = emailAuthenticatorHelper;
@@ -30,6 +32,7 @@ public class AuthenticatorManager : IAuthenticatorService
         _mailService = mailService;
         _otpAuthenticatorHelper = otpAuthenticatorHelper;
         _otpAuthenticatorRepository = otpAuthenticatorRepository;
+        _userRepository = userRepository;
     }
 
     public async Task<EmailAuthenticator> CreateEmailAuthenticator(User user)
@@ -66,16 +69,18 @@ public class AuthenticatorManager : IAuthenticatorService
 
     public async Task SendAuthenticatorCode(User user)
     {
-        if (user.AuthenticatorType is AuthenticatorType.Email)
-            await SendAuthenticatorCodeWithEmail(user);
+        await SendAuthenticatorCodeWithEmail(user);
+    }
+
+    public async Task SendAuthenticatorCode(int userId)
+    {
+        User user = await _userRepository.GetAsync(x => x.Id == userId);
+        await SendAuthenticatorCodeWithEmail(user);
     }
 
     public async Task VerifyAuthenticatorCode(User user, string authenticatorCode)
     {
-        if (user.AuthenticatorType is AuthenticatorType.Email)
-            await VerifyAuthenticatorCodeWithEmail(user, authenticatorCode);
-        else if (user.AuthenticatorType is AuthenticatorType.Otp)
-            await VerifyAuthenticatorCodeWithOtp(user, authenticatorCode);
+        await VerifyAuthenticatorCodeWithEmail(user, authenticatorCode);
     }
 
     private async Task SendAuthenticatorCodeWithEmail(User user)
