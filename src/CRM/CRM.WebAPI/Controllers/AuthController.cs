@@ -7,6 +7,7 @@ using CRM.Application.Features.Auth.Commands.Login;
 using CRM.Application.Features.Auth.Commands.Register;
 using CRM.Application.Features.Auth.Commands.RefreshToken;
 using CRM.Application.Features.Auth.Commands.RevokeToken;
+using CRM.Application.Features.Auth.Commands.SendAuthCode;
 
 namespace CRM.WebAPI.Controllers;
 
@@ -66,6 +67,13 @@ public class AuthController : BaseController
     public async Task<IActionResult> VerifyEmailAuthenticator([FromQuery] VerifyEmailAuthenticatorCommand verifyEmailAuthenticatorCommand)
     {
         await Mediator.Send(verifyEmailAuthenticatorCommand);
+        return Ok();
+    }
+
+    [HttpGet("SendAuthenticateCode")]
+    public async Task<IActionResult> SendAuthenticateCode([FromQuery] int userId)
+    {
+        await Mediator.Send(new SendAuthCodeCommand(userId));
         return Ok();
     }
 
