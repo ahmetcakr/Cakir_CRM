@@ -1,5 +1,6 @@
 ﻿using Core.Security.Constants;
 using Core.Security.Entities;
+using CRM.Application.Features.Users.Constants;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -46,6 +47,45 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
         //seeds.Add(new OperationClaim { Id = ++id, Name = "Customers.Delete" });
 
         //#endregion
+
+        #region Users
+
+        seeds.Add(new OperationClaim { Id = ++id, Name = "users.admin" });
+
+        seeds.Add(new OperationClaim { Id = ++id, Name = "users.read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "users.write" });
+
+        seeds.Add(new OperationClaim { Id = ++id, Name = "users.add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "users.update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "users.delete" });
+
+        #endregion
+
+        #region OperationClaims
+
+        seeds.Add(new OperationClaim { Id = ++id, Name = "operationclaims.admin" });
+
+        seeds.Add(new OperationClaim { Id = ++id, Name = "operationclaims.read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "operationclaims.write" });
+
+        seeds.Add(new OperationClaim { Id = ++id, Name = "operationclaims.add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "operationclaims.update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "operationclaims.delete" });
+
+        #endregion
+
+        #region UserOperationClaims
+
+        seeds.Add(new OperationClaim { Id = ++id, Name = "useroperationclaims.admin" });
+
+        seeds.Add(new OperationClaim { Id = ++id, Name = "useroperationclaims.read" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "useroperationclaims.write" });
+
+        seeds.Add(new OperationClaim { Id = ++id, Name = "useroperationclaims.add" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "useroperationclaims.update" });
+        seeds.Add(new OperationClaim { Id = ++id, Name = "useroperationclaims.delete" }); 
+
+        #endregion
 
         return seeds;
     }

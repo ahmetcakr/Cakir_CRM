@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRM.Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20240602191956_initialize")]
-    partial class initialize
+    [Migration("20240624200843_operationClaims1")]
+    partial class operationClaims1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,6 +101,114 @@ namespace CRM.Persistence.Migrations
                             Id = 1,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "users.Admin"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "users.Read"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "users.Write"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "users.Add"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "users.Update"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "users.Delete"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.Admin"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.Read"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.Write"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.Add"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.Update"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "operationclaims.Delete"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "useroperationclaims.Admin"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "useroperationclaims.Read"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "useroperationclaims.Write"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "useroperationclaims.Add"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "useroperationclaims.Update"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Name = "useroperationclaims.Delete"
                         });
                 });
 
@@ -276,8 +384,8 @@ namespace CRM.Persistence.Migrations
                             Email = "admin@admin.com",
                             FirstName = "Admin",
                             LastName = "NArchitecture",
-                            PasswordHash = new byte[] { 57, 2, 170, 59, 20, 165, 97, 240, 119, 102, 63, 147, 199, 10, 71, 80, 190, 8, 29, 143, 45, 156, 125, 115, 50, 112, 3, 162, 72, 4, 124, 170, 1, 148, 76, 220, 43, 41, 155, 136, 30, 237, 182, 150, 10, 234, 54, 179, 227, 61, 41, 42, 183, 55, 205, 67, 100, 210, 229, 162, 142, 132, 204, 105 },
-                            PasswordSalt = new byte[] { 140, 121, 44, 108, 206, 59, 244, 28, 204, 34, 129, 1, 247, 75, 54, 228, 107, 84, 10, 42, 99, 247, 186, 105, 17, 22, 107, 204, 89, 175, 118, 151, 168, 69, 224, 155, 175, 110, 126, 174, 80, 224, 9, 76, 54, 50, 237, 251, 181, 143, 24, 77, 171, 244, 248, 243, 208, 163, 183, 186, 210, 40, 100, 233, 213, 61, 191, 85, 248, 128, 64, 140, 175, 135, 78, 232, 247, 103, 131, 175, 77, 200, 6, 152, 18, 4, 189, 67, 185, 13, 212, 200, 25, 0, 194, 103, 12, 210, 243, 186, 89, 227, 223, 255, 202, 158, 192, 127, 187, 46, 44, 235, 245, 19, 20, 234, 30, 46, 175, 242, 18, 14, 140, 254, 79, 176, 8, 107 },
+                            PasswordHash = new byte[] { 150, 177, 204, 117, 71, 255, 202, 56, 46, 104, 107, 252, 210, 155, 142, 126, 171, 158, 191, 234, 232, 0, 3, 208, 182, 192, 97, 170, 50, 160, 126, 166, 195, 244, 237, 50, 151, 129, 159, 175, 24, 251, 228, 107, 54, 129, 33, 230, 137, 142, 96, 217, 119, 166, 138, 100, 64, 57, 172, 2, 18, 98, 237, 180 },
+                            PasswordSalt = new byte[] { 230, 18, 79, 63, 63, 195, 139, 36, 103, 191, 112, 123, 154, 39, 86, 6, 233, 28, 54, 64, 137, 246, 68, 33, 42, 200, 108, 143, 49, 66, 160, 7, 14, 202, 220, 48, 28, 201, 115, 25, 98, 138, 251, 46, 38, 210, 11, 66, 11, 101, 16, 111, 202, 139, 214, 92, 42, 199, 141, 133, 23, 99, 178, 103, 146, 180, 7, 33, 166, 70, 47, 126, 131, 115, 179, 106, 56, 211, 214, 110, 88, 231, 184, 223, 165, 131, 225, 152, 85, 6, 80, 216, 55, 136, 114, 148, 169, 250, 230, 136, 127, 186, 85, 202, 243, 26, 3, 112, 222, 129, 121, 116, 31, 119, 12, 239, 32, 223, 4, 47, 24, 251, 240, 101, 51, 103, 152, 57 },
                             Status = true
                         });
                 });
