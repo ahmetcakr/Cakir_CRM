@@ -4,6 +4,7 @@ using CRM.Persistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRM.Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    partial class BaseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240710212347_companyAdd")]
+    partial class companyAdd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -184,181 +187,181 @@ namespace CRM.Persistence.Migrations
                         {
                             Id = 2,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "users.admin"
+                            Name = "companies.admin"
                         },
                         new
                         {
                             Id = 3,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "users.read"
+                            Name = "companies.read"
                         },
                         new
                         {
                             Id = 4,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "users.write"
+                            Name = "companies.write"
                         },
                         new
                         {
                             Id = 5,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "users.add"
+                            Name = "companies.add"
                         },
                         new
                         {
                             Id = 6,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "users.update"
+                            Name = "companies.update"
                         },
                         new
                         {
                             Id = 7,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "users.delete"
+                            Name = "companies.delete"
                         },
                         new
                         {
                             Id = 8,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.admin"
+                            Name = "companytypes.admin"
                         },
                         new
                         {
                             Id = 9,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.read"
+                            Name = "companytypes.read"
                         },
                         new
                         {
                             Id = 10,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.write"
+                            Name = "companytypes.write"
                         },
                         new
                         {
                             Id = 11,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.add"
+                            Name = "companytypes.add"
                         },
                         new
                         {
                             Id = 12,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.update"
+                            Name = "companytypes.update"
                         },
                         new
                         {
                             Id = 13,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "operationclaims.delete"
+                            Name = "companytypes.delete"
                         },
                         new
                         {
                             Id = 14,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "useroperationclaims.admin"
+                            Name = "users.admin"
                         },
                         new
                         {
                             Id = 15,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "useroperationclaims.read"
+                            Name = "users.read"
                         },
                         new
                         {
                             Id = 16,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "useroperationclaims.write"
+                            Name = "users.write"
                         },
                         new
                         {
                             Id = 17,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "useroperationclaims.add"
+                            Name = "users.add"
                         },
                         new
                         {
                             Id = 18,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "useroperationclaims.update"
+                            Name = "users.update"
                         },
                         new
                         {
                             Id = 19,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "useroperationclaims.delete"
+                            Name = "users.delete"
                         },
                         new
                         {
                             Id = 20,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companies.admin"
+                            Name = "operationclaims.admin"
                         },
                         new
                         {
                             Id = 21,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companies.read"
+                            Name = "operationclaims.read"
                         },
                         new
                         {
                             Id = 22,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companies.write"
+                            Name = "operationclaims.write"
                         },
                         new
                         {
                             Id = 23,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companies.add"
+                            Name = "operationclaims.add"
                         },
                         new
                         {
                             Id = 24,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companies.update"
+                            Name = "operationclaims.update"
                         },
                         new
                         {
                             Id = 25,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companies.delete"
+                            Name = "operationclaims.delete"
                         },
                         new
                         {
                             Id = 26,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companytypes.admin"
+                            Name = "useroperationclaims.admin"
                         },
                         new
                         {
                             Id = 27,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companytypes.read"
+                            Name = "useroperationclaims.read"
                         },
                         new
                         {
                             Id = 28,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companytypes.write"
+                            Name = "useroperationclaims.write"
                         },
                         new
                         {
                             Id = 29,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companytypes.add"
+                            Name = "useroperationclaims.add"
                         },
                         new
                         {
                             Id = 30,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companytypes.update"
+                            Name = "useroperationclaims.update"
                         },
                         new
                         {
                             Id = 31,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "companytypes.delete"
+                            Name = "useroperationclaims.delete"
                         });
                 });
 
@@ -474,10 +477,6 @@ namespace CRM.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CompanyId")
-                        .HasColumnType("int")
-                        .HasColumnName("CompanyId");
-
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedDate");
@@ -529,13 +528,12 @@ namespace CRM.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CompanyId = 1,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@admin.com",
                             FirstName = "Admin",
-                            LastName = "Cakir",
-                            PasswordHash = new byte[] { 79, 60, 131, 47, 217, 45, 44, 48, 30, 24, 254, 42, 104, 230, 50, 0, 149, 154, 135, 11, 238, 104, 120, 172, 128, 242, 40, 207, 98, 158, 167, 253, 109, 104, 56, 228, 45, 20, 29, 240, 221, 203, 58, 167, 187, 88, 192, 103, 95, 2, 189, 167, 66, 23, 29, 156, 53, 186, 215, 69, 96, 217, 84, 171 },
-                            PasswordSalt = new byte[] { 151, 14, 107, 180, 163, 169, 151, 183, 182, 220, 18, 33, 199, 235, 12, 241, 122, 243, 123, 23, 74, 71, 199, 77, 67, 192, 219, 105, 0, 37, 38, 70, 127, 203, 230, 233, 40, 45, 3, 143, 77, 187, 123, 147, 134, 88, 128, 84, 101, 89, 193, 130, 122, 214, 100, 78, 220, 193, 70, 125, 113, 202, 111, 211, 3, 148, 88, 122, 224, 72, 149, 243, 104, 51, 89, 164, 11, 10, 74, 187, 96, 208, 230, 181, 96, 101, 47, 69, 41, 188, 129, 210, 156, 21, 181, 228, 76, 173, 131, 66, 34, 153, 178, 31, 130, 231, 92, 155, 145, 4, 199, 3, 226, 75, 35, 92, 104, 85, 134, 155, 139, 167, 186, 135, 128, 40, 231, 146 },
+                            LastName = "NArchitecture",
+                            PasswordHash = new byte[] { 43, 4, 108, 80, 225, 101, 76, 69, 71, 78, 245, 183, 98, 128, 152, 224, 230, 16, 69, 209, 254, 138, 36, 31, 222, 127, 211, 187, 43, 152, 206, 84, 186, 65, 88, 212, 62, 232, 22, 117, 44, 251, 151, 27, 238, 203, 200, 22, 196, 163, 88, 3, 127, 29, 84, 123, 117, 144, 114, 48, 237, 230, 214, 160 },
+                            PasswordSalt = new byte[] { 148, 130, 213, 4, 41, 56, 105, 184, 113, 135, 126, 222, 52, 237, 81, 77, 172, 15, 100, 203, 7, 208, 215, 102, 199, 128, 147, 158, 42, 253, 172, 59, 50, 116, 209, 68, 176, 57, 248, 144, 224, 62, 127, 37, 62, 89, 171, 48, 185, 57, 76, 38, 252, 226, 92, 47, 34, 147, 3, 192, 3, 190, 82, 113, 11, 9, 233, 84, 40, 189, 106, 141, 7, 190, 234, 137, 74, 217, 0, 82, 49, 236, 27, 73, 252, 246, 64, 158, 190, 40, 133, 103, 21, 16, 168, 44, 135, 93, 74, 59, 21, 237, 9, 194, 43, 21, 103, 97, 209, 80, 231, 176, 69, 70, 198, 19, 117, 173, 141, 217, 212, 238, 233, 205, 51, 35, 77, 208 },
                             Status = true
                         });
                 });

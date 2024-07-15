@@ -12,6 +12,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.ToTable("Users").HasKey(u => u.Id);
 
         builder.Property(u => u.Id).HasColumnName("Id").IsRequired();
+        builder.Property(u => u.CompanyId).HasColumnName("CompanyId").IsRequired();
         builder.Property(u => u.FirstName).HasColumnName("FirstName").IsRequired();
         builder.Property(u => u.LastName).HasColumnName("LastName").IsRequired();
         builder.Property(u => u.Email).HasColumnName("Email").IsRequired();
@@ -45,8 +46,9 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             new()
             {
                 Id = 1,
+                CompanyId = 1,
                 FirstName = "Admin",
-                LastName = "NArchitecture",
+                LastName = "Cakir",
                 Email = "admin@admin.com",
                 Status = true,
                 PasswordHash = passwordHash,
