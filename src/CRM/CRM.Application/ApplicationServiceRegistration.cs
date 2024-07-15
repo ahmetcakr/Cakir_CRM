@@ -9,8 +9,11 @@ using Core.CrossCuttingConcerns.Logging.Serilog.Logger;
 using Core.ElasticSearch;
 using Core.Mailing;
 using Core.Mailing.MailKitImplementations;
+using CRM.Application.Features.Companies.Rules;
+using CRM.Application.Features.CompanyTypes.Rules;
 using CRM.Application.Services.AuthenticatorService;
 using CRM.Application.Services.AuthService;
+using CRM.Application.Services.CompaniesService;
 using CRM.Application.Services.UsersService;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
@@ -45,6 +48,9 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IAuthService, AuthManager>();
         services.AddScoped<IAuthenticatorService, AuthenticatorManager>();
         services.AddScoped<IUserService, UserManager>();
+
+        services.AddScoped<CompanyBusinessRules>();
+        services.AddScoped<CompanyTypeBusinessRules>();
     }
 
     public static IServiceCollection AddSubClassesOfType(
